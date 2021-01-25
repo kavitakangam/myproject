@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "8e961f3f-58db-4832-ab90-e7918cfbd573",
+		"name": "Stockanalyser",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "csvFile",
+							"type": "file",
+							"src": "/C:/NexAdmin/stockanalyser/stockanalyser/src/data/dow_jones_index.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/get/AA",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get",
+						"AA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "csvFile",
+							"type": "file",
+							"src": "/C:/NexAdmin/stockanalyser/stockanalyser/src/data/dow_jones_index.csv"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"quarter\": 1,\r\n\"stock\": \"AAF\",\r\n\"date\": \"25/1/2021\",\r\n\"open\": \"$15.82\",\r\n\"high\": \"$16.72\",\r\n\"low\": \"$15.78\",\r\n\"close\": \"$16.42\",\r\n\"volume\": 2.39655616E8,\r\n\"percent_change_price\": 3.79267,\r\n\"percent_change_volume_over_last_wk\": 0.0,\r\n\"previous_weeks_volume\": 0.0,\r\n\"next_weeks_open\": \"$16.71\",\r\n\"next_weeks_close\": \"$15.97\",\r\n\"percent_change_next_weeks_price\": -4.42849,\r\n\"days_to_next_dividend\": 26,\r\n\"percent_return_next_dividend\": 0.182704\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"add"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
